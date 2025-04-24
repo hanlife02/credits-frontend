@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { useAuth } from "@/contexts/auth-context"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { ChevronDown, LayoutDashboard, BookOpen, FolderOpen, BarChart, User, LogOut } from "lucide-react"
+import { ChevronDown, LayoutDashboard, BookOpen, FolderOpen, BarChart, User, LogOut, Clock } from "lucide-react"
 
 export function TopNavbar() {
   const { user, isAuthenticated, logout } = useAuth()
@@ -24,30 +24,44 @@ export function TopNavbar() {
       href: "/dashboard",
       icon: <LayoutDashboard className="h-4 w-4" />,
       active: pathname === "/dashboard",
+      requireAuth: true,
     },
     {
       name: "培养方案",
       href: "/programs",
       icon: <FolderOpen className="h-4 w-4" />,
       active: pathname.startsWith("/programs"),
+      requireAuth: true,
     },
     {
       name: "课程信息",
       href: "/courses",
       icon: <BookOpen className="h-4 w-4" />,
       active: pathname.startsWith("/courses"),
+      requireAuth: true,
     },
     {
       name: "数据统计",
       href: "/statistics",
       icon: <BarChart className="h-4 w-4" />,
       active: pathname === "/statistics",
+      requireAuth: true,
+    },
+    {
+      name: "版本时间线",
+      href: "/about/timeline",
+      icon: <Clock className="h-4 w-4" />,
+      active: pathname === "/about/timeline",
+      requireAuth: false,
     },
   ]
 
+  // Filter nav items based on authentication status
+  const filteredNavItems = navItems.filter((item) => !item.requireAuth || isAuthenticated)
+
   // Get current page name for mobile dropdown
   const getCurrentPageName = () => {
-    const currentItem = navItems.find((item) => item.active)
+    const currentItem = filteredNavItems.find((item) => item.active)
     return currentItem ? currentItem.name : "菜单"
   }
 
@@ -55,61 +69,58 @@ export function TopNavbar() {
     <header className="sticky top-0 z-40 w-full border-b border-gray-200 bg-white">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-6">
-          {/* Logo - Updated to use the anime character image */}
+          {/* Logo */}
           <Link href={isAuthenticated ? "/dashboard" : "/"} className="flex items-center gap-2">
             <img src="/favicon.jpg" alt="Logo" className="h-8 w-8 rounded-full" />
             <span className="text-lg font-bold text-black">毕业学分审查系统</span>
           </Link>
 
           {/* Desktop navigation */}
-          {isAuthenticated && (
-            <nav className="hidden lg:flex lg:items-center lg:gap-6">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`text-sm font-medium transition-colors ${
-                    item.active ? "text-black" : "text-gray-600 hover:text-black"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </nav>
-          )}
+          <nav className="hidden lg:flex lg:items-center lg:gap-6">
+            {filteredNavItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`text-sm font-medium transition-colors flex items-center gap-1.5 ${
+                  item.active ? "text-black" : "text-gray-600 hover:text-black"
+                }`}
+              >
+                {item.icon}
+                {item.name}
+              </Link>
+            ))}
+          </nav>
         </div>
 
         <div className="flex items-center gap-4">
           {/* Mobile navigation dropdown */}
-          {isAuthenticated && (
-            <div className="lg:hidden">
-              <DropdownMenu open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="outline" className="flex items-center gap-1 border-gray-200 text-black">
-                    <span>{getCurrentPageName()}</span>
-                    <ChevronDown className="h-4 w-4" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-56">
-                  {navItems.map((item) => (
-                    <DropdownMenuItem
-                      key={item.href}
-                      className={`cursor-pointer ${item.active ? "bg-gray-100" : ""}`}
-                      onClick={() => {
-                        window.location.href = item.href
-                        setMobileMenuOpen(false)
-                      }}
-                    >
-                      <div className="flex items-center gap-2">
-                        {item.icon}
-                        <span>{item.name}</span>
-                      </div>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
-          )}
+          <div className="lg:hidden">
+            <DropdownMenu open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" className="flex items-center gap-1 border-gray-200 text-black">
+                  <span>{getCurrentPageName()}</span>
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56">
+                {filteredNavItems.map((item) => (
+                  <DropdownMenuItem
+                    key={item.href}
+                    className={`cursor-pointer ${item.active ? "bg-gray-100" : ""}`}
+                    onClick={() => {
+                      window.location.href = item.href
+                      setMobileMenuOpen(false)
+                    }}
+                  >
+                    <div className="flex items-center gap-2">
+                      {item.icon}
+                      <span>{item.name}</span>
+                    </div>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
 
           {isAuthenticated && user ? (
             <DropdownMenu>

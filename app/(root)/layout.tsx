@@ -1,6 +1,7 @@
 import type React from "react"
 import { TopNavbar } from "@/components/top-navbar"
 import { AuthProvider } from "@/contexts/auth-context"
+import { Footer } from "@/components/footer"
 
 export default function RootLayout({
   children,
@@ -9,9 +10,10 @@ export default function RootLayout({
 }) {
   return (
     <AuthProvider>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white flex flex-col">
         <TopNavbar />
-        <main className="min-h-screen">{children}</main>
+        <main className="flex-1">{children}</main>
+        <Footer />
       </div>
     </AuthProvider>
   )

@@ -73,11 +73,11 @@ export default function ForgotPasswordPage() {
         backgroundPosition: "center",
       }}
     >
-      {/* Frosted glass overlay for the entire background */}
-      <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
+      {/* Subtle frosted glass overlay for the entire background */}
+      <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px]"></div>
 
       <div className="container relative z-10 flex items-center justify-center">
-        <Card className="w-full max-w-md bg-white/90 backdrop-blur-sm border-0 shadow-lg">
+        <Card className="w-full max-w-md bg-white/85 backdrop-blur-[2px] border-0 shadow-lg">
           <CardHeader className="space-y-2 text-center">
             <div className="flex justify-center">
               <img src="/pku-logo.png" alt="PKU Logo" className="h-16 w-16" />
@@ -104,7 +104,7 @@ export default function ForgotPasswordPage() {
                     onChange={(e) => setEmail(e.target.value)}
                     disabled={codeSent}
                     required
-                    className="bg-white/70"
+                    className="bg-white/80"
                   />
                   <Button
                     type="button"
@@ -126,7 +126,7 @@ export default function ForgotPasswordPage() {
                   value={code}
                   onChange={(e) => setCode(e.target.value)}
                   required
-                  className="bg-white/70"
+                  className="bg-white/80"
                 />
               </div>
               <div className="space-y-2">
@@ -137,7 +137,7 @@ export default function ForgotPasswordPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="bg-white/70"
+                  className="bg-white/80"
                 />
               </div>
               <div className="space-y-2">
@@ -148,7 +148,7 @@ export default function ForgotPasswordPage() {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   required
-                  className="bg-white/70"
+                  className="bg-white/80"
                 />
               </div>
               <Button type="submit" className="w-full" disabled={isLoading || !codeSent}>

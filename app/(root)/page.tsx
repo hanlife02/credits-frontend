@@ -21,7 +21,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
-        {/* Hero section with background image and frosted glass effect */}
+        {/* Hero section with background image and subtle frosted glass effect */}
         <div
           className="relative flex flex-col items-center justify-center p-4 md:p-8 lg:p-12 min-h-[70vh] text-white"
           style={{
@@ -30,8 +30,8 @@ export default function HomePage() {
             backgroundPosition: "center",
           }}
         >
-          {/* Frosted glass overlay */}
-          <div className="absolute inset-0 bg-black/40 backdrop-blur-md"></div>
+          {/* Subtle frosted glass overlay */}
+          <div className="absolute inset-0 bg-black/25 backdrop-blur-[2px]"></div>
 
           <div className="relative z-10 max-w-5xl w-full mx-auto text-center">
             <div className="flex justify-center mb-6">

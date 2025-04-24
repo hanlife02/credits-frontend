@@ -52,8 +52,7 @@ export default function HomePage() {
               <Button
                 asChild
                 size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white/20 dark:border-white dark:text-white dark:hover:bg-white/20"
+                className="bg-white text-black hover:bg-gray-200 dark:bg-white dark:text-black dark:hover:bg-gray-200"
               >
                 <Link href="/login">登录账号</Link>
               </Button>

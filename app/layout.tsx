@@ -6,9 +6,13 @@ import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
+// Update the metadata with the new title
 export const metadata = {
-  title: "Graduate Credit Audit System",
+  title: "毕业学分审查喵～",
   description: "Track your course credits and graduation requirements",
+  icons: {
+    icon: "/favicon.jpg",
+  },
     generator: 'v0.dev'
 }
 

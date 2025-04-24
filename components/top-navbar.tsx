@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { useAuth } from "@/contexts/auth-context"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { ChevronDown, GraduationCap, LayoutDashboard, BookOpen, FolderOpen, BarChart, User, LogOut } from "lucide-react"
+import { ChevronDown, LayoutDashboard, BookOpen, FolderOpen, BarChart, User, LogOut } from "lucide-react"
 
 export function TopNavbar() {
   const { user, isAuthenticated, logout } = useAuth()
@@ -57,8 +57,8 @@ export function TopNavbar() {
         <div className="flex items-center gap-6">
           {/* Logo */}
           <Link href={isAuthenticated ? "/dashboard" : "/"} className="flex items-center gap-2">
-            <GraduationCap className="h-6 w-6 text-black" />
-            <span className="text-lg font-bold text-black">毕业学分审查系统</span>
+            <img src="/favicon.jpg" alt="Logo" className="h-8 w-8 rounded-full" />
+            <span className="text-lg font-bold text-black">毕业学分审查喵～</span>
           </Link>
 
           {/* Desktop navigation */}

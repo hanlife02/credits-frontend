@@ -1,8 +1,23 @@
+"use client"
+
+import { useEffect } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { GraduationCap, BookOpen, BarChart, CheckCircle } from "lucide-react"
+import { useAuth } from "@/contexts/auth-context"
 
 export default function HomePage() {
+  const { isAuthenticated } = useAuth()
+  const router = useRouter()
+
+  // Redirect to dashboard if user is already logged in
+  useEffect(() => {
+    if (isAuthenticated) {
+      router.push("/dashboard")
+    }
+  }, [isAuthenticated, router])
+
   return (
     <main className="flex flex-col min-h-screen">
       <div className="flex flex-col items-center justify-center p-4 md:p-8 lg:p-12 min-h-[70vh] bg-black dark:bg-white text-white dark:text-black">

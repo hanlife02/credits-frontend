@@ -80,7 +80,7 @@ export default function ForgotPasswordPage() {
         <Card className="w-full max-w-md bg-white/85 backdrop-blur-[2px] border-0 shadow-lg">
           <CardHeader className="space-y-2 text-center">
             <div className="flex justify-center">
-              <img src="/pku-logo.png" alt="PKU Logo" className="h-16 w-16" />
+              <img src="/pku-logo.png" alt="PKU Logo" className="w-auto h-[4rem]" />
             </div>
             <CardTitle className="text-2xl">重置密码</CardTitle>
             <CardDescription>我们将向您的邮箱发送重置密码的验证码</CardDescription>
@@ -88,7 +88,7 @@ export default function ForgotPasswordPage() {
           <CardContent>
             {error && (
               <Alert variant="destructive" className="mb-4">
-                <AlertCircle className="h-4 w-4" />
+                <AlertCircle className="w-auto h-[1rem]" />
                 <AlertDescription>{error}</AlertDescription>
               </Alert>
             )}

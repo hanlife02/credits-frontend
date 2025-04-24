@@ -22,42 +22,42 @@ export function TopNavbar() {
     {
       name: "仪表盘",
       href: "/dashboard",
-      icon: <LayoutDashboard className="h-4 w-4" />,
+      icon: <LayoutDashboard className="w-auto h-[1em]" />,
       active: pathname === "/dashboard",
       requireAuth: true,
     },
     {
       name: "培养方案",
       href: "/programs",
-      icon: <FolderOpen className="h-4 w-4" />,
+      icon: <FolderOpen className="w-auto h-[1em]" />,
       active: pathname.startsWith("/programs"),
       requireAuth: true,
     },
     {
       name: "课程信息",
       href: "/courses",
-      icon: <BookOpen className="h-4 w-4" />,
+      icon: <BookOpen className="w-auto h-[1em]" />,
       active: pathname.startsWith("/courses"),
       requireAuth: true,
     },
     {
       name: "数据统计",
       href: "/statistics",
-      icon: <BarChart className="h-4 w-4" />,
+      icon: <BarChart className="w-auto h-[1em]" />,
       active: pathname === "/statistics",
       requireAuth: true,
     },
     {
       name: "版本时间线",
       href: "/about/timeline",
-      icon: <Clock className="h-4 w-4" />,
+      icon: <Clock className="w-auto h-[1em]" />,
       active: pathname === "/about/timeline",
       requireAuth: false,
     },
     {
       name: "开发团队",
       href: "/about/developers",
-      icon: <Users className="h-4 w-4" />,
+      icon: <Users className="w-auto h-[1em]" />,
       active: pathname === "/about/developers",
       requireAuth: false,
     },
@@ -78,7 +78,7 @@ export function TopNavbar() {
         <div className="flex items-center gap-6">
           {/* Logo */}
           <Link href={isAuthenticated ? "/dashboard" : "/"} className="flex items-center gap-2">
-            <img src="/pku-logo.png" alt="PKU Logo" className="h-8 w-8" />
+            <img src="/pku-logo.png" alt="PKU Logo" className="w-auto h-[2em]" />
             <span className="text-lg font-bold text-black">毕业学分审查系统</span>
           </Link>
 
@@ -106,7 +106,7 @@ export function TopNavbar() {
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" className="flex items-center gap-1 border-gray-200 text-black">
                   <span>{getCurrentPageName()}</span>
-                  <ChevronDown className="h-4 w-4" />
+                  <ChevronDown className="w-auto h-[1em]" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-56">
@@ -133,17 +133,17 @@ export function TopNavbar() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="gap-2 text-black hover:bg-gray-100">
-                  <User className="h-4 w-4" />
+                  <User className="w-auto h-[1em]" />
                   <span className="hidden sm:inline-block">{user.email}</span>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 <DropdownMenuItem className="gap-2 cursor-pointer" onClick={() => (window.location.href = "/profile")}>
-                  <User className="h-4 w-4" />
+                  <User className="w-auto h-[1em]" />
                   <span>个人信息</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="gap-2 cursor-pointer text-red-600" onClick={logout}>
-                  <LogOut className="h-4 w-4" />
+                  <LogOut className="w-auto h-[1em]" />
                   <span>退出登录</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>

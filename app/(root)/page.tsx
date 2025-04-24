@@ -35,7 +35,7 @@ export default function HomePage() {
 
           <div className="relative z-10 max-w-5xl w-full mx-auto text-center">
             <div className="flex justify-center mb-6">
-              <img src="/pku-logo.png" alt="PKU Logo" className="h-24 w-24" />
+              <img src="/pku-logo.png" alt="PKU Logo" className="w-auto h-[6rem]" />
             </div>
             <h1 className="text-3xl md:text-5xl font-bold mb-6">毕业学分审查系统</h1>
             <p className="text-lg md:text-xl mb-12 max-w-2xl mx-auto">
@@ -62,25 +62,25 @@ export default function HomePage() {
 
         <div className="container py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="flex flex-col items-center text-center p-6 bg-gray-100 dark:bg-gray-900 rounded-lg">
-            <GraduationCap className="h-12 w-12 mb-4" />
+            <GraduationCap className="w-auto h-[3rem] mb-4" />
             <h2 className="text-xl font-bold mb-2">个性化培养方案</h2>
             <p className="text-muted-foreground">创建或选择适合您的培养方案，轻松管理课程类别和学分要求。</p>
           </div>
 
           <div className="flex flex-col items-center text-center p-6 bg-gray-100 dark:bg-gray-900 rounded-lg">
-            <BookOpen className="h-12 w-12 mb-4" />
+            <BookOpen className="w-auto h-[3rem] mb-4" />
             <h2 className="text-xl font-bold mb-2">课程管理</h2>
             <p className="text-muted-foreground">添加和管理您的课程信息，包括学分、成绩和类别，随时修改更新。</p>
           </div>
 
           <div className="flex flex-col items-center text-center p-6 bg-gray-100 dark:bg-gray-900 rounded-lg">
-            <BarChart className="h-12 w-12 mb-4" />
+            <BarChart className="w-auto h-[3rem] mb-4" />
             <h2 className="text-xl font-bold mb-2">学分分析</h2>
             <p className="text-muted-foreground">直观了解您的总学分进度、GPA和各类别学分完成情况。</p>
           </div>
 
           <div className="flex flex-col items-center text-center p-6 bg-gray-100 dark:bg-gray-900 rounded-lg">
-            <CheckCircle className="h-12 w-12 mb-4" />
+            <CheckCircle className="w-auto h-[3rem] mb-4" />
             <h2 className="text-xl font-bold mb-2">毕业审查</h2>
             <p className="text-muted-foreground">清晰展示您离毕业要求还有多远，帮助您有针对性地规划选课。</p>
           </div>

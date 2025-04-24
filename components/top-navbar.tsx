@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { useAuth } from "@/contexts/auth-context"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { ChevronDown, LayoutDashboard, BookOpen, FolderOpen, BarChart, User, LogOut, Clock } from "lucide-react"
+import { ChevronDown, LayoutDashboard, BookOpen, FolderOpen, BarChart, User, LogOut, Clock, Users } from "lucide-react"
 
 export function TopNavbar() {
   const { user, isAuthenticated, logout } = useAuth()
@@ -52,6 +52,13 @@ export function TopNavbar() {
       href: "/about/timeline",
       icon: <Clock className="h-4 w-4" />,
       active: pathname === "/about/timeline",
+      requireAuth: false,
+    },
+    {
+      name: "开发团队",
+      href: "/about/developers",
+      icon: <Users className="h-4 w-4" />,
+      active: pathname === "/about/developers",
       requireAuth: false,
     },
   ]

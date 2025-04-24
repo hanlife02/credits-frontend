@@ -16,6 +16,12 @@ export function Footer() {
           >
             版本时间线
           </Link>
+          <Link
+            href="/about/developers"
+            className="text-sm font-medium underline underline-offset-4 text-muted-foreground hover:text-foreground"
+          >
+            开发团队
+          </Link>
         </div>
       </div>
     </footer>

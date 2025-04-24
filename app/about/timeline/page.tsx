@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowLeft, CheckCircle } from "lucide-react"
+import { ArrowLeft, CheckCircle, Clock } from "lucide-react"
 
 export default function TimelinePage() {
   return (
@@ -16,6 +16,80 @@ export default function TimelinePage() {
       </div>
 
       <div className="space-y-12">
+        {/* Version 2 - In Development */}
+        <div className="relative pl-8 border-l-2 border-gray-200 dark:border-gray-800">
+          <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center">
+            <span className="text-white text-xs font-bold">v2</span>
+          </div>
+
+          <div className="mb-2">
+            <div className="flex items-center gap-2">
+              <h2 className="text-2xl font-bold">版本 2.0</h2>
+              <span className="bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-100 text-xs font-medium px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                <Clock className="h-3 w-3" />
+                开发中
+              </span>
+            </div>
+            <p className="text-muted-foreground">预计发布日期: 待定</p>
+          </div>
+
+          <Card className="mb-8">
+            <CardHeader>
+              <CardTitle>预计功能</CardTitle>
+              <CardDescription>毕业学分审查系统的第二个版本，提供更智能的自动化功能</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h3 className="text-lg font-semibold mb-2">用户信息增强</h3>
+                <ul className="space-y-1 list-disc pl-5">
+                  <li>支持选择用户的院系-专业-入学年份</li>
+                  <li>支持保存用户选择的培养方案到后端</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold mb-2">自动成绩获取与匹配</h3>
+                <ul className="space-y-1 list-disc pl-5">
+                  <li>支持自动爬取成绩（需要输入学号密码）</li>
+                  <li>爬取完成后提供页面确认课程匹配和分数正确性</li>
+                  <li>爬取成绩后自动匹配课程类别（关键词匹配+手动调整界面）</li>
+                  <li>提供课程对照表管理（自定义课程别名与标准课程的映射关系）</li>
+                  <li>未匹配课程的智能推荐（根据课程名称相似度推荐培养方案分类）</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold mb-2">培养方案智能处理</h3>
+                <ul className="space-y-1 list-disc pl-5">
+                  <li>支持上传培养方案PDF，并AI自动解析</li>
+                  <li>创建培养方案时也选择院系-专业-入学年份</li>
+                  <li>培养方案以列表形式展示，支持根据院系-专业-入学年份进行筛选</li>
+                  <li>培养方案自动匹配：院系和专业相同，年份匹配最近且不晚于入学年份</li>
+                </ul>
+              </div>
+            </CardContent>
+          </Card>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <div className="flex items-center gap-1 text-sm bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-100 px-3 py-1 rounded-full">
+              <Clock className="h-3.5 w-3.5" />
+              <span>自动成绩获取</span>
+            </div>
+            <div className="flex items-center gap-1 text-sm bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-100 px-3 py-1 rounded-full">
+              <Clock className="h-3.5 w-3.5" />
+              <span>AI解析培养方案</span>
+            </div>
+            <div className="flex items-center gap-1 text-sm bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-100 px-3 py-1 rounded-full">
+              <Clock className="h-3.5 w-3.5" />
+              <span>智能课程匹配</span>
+            </div>
+            <div className="flex items-center gap-1 text-sm bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-100 px-3 py-1 rounded-full">
+              <Clock className="h-3.5 w-3.5" />
+              <span>用户信息增强</span>
+            </div>
+          </div>
+        </div>
+
         {/* Version 1 */}
         <div className="relative pl-8 border-l-2 border-gray-200 dark:border-gray-800">
           <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center">

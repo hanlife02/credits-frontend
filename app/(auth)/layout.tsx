@@ -1,5 +1,6 @@
 import type React from "react"
 import { AuthProvider } from "@/contexts/auth-context"
+import { Footer } from "@/components/footer"
 
 export default function AuthLayout({
   children,
@@ -8,7 +9,10 @@ export default function AuthLayout({
 }) {
   return (
     <AuthProvider>
-      <main>{children}</main>
+      <div className="min-h-screen flex flex-col">
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </div>
     </AuthProvider>
   )
 }

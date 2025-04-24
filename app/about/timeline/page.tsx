@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowLeft, CheckCircle, Clock } from "lucide-react"
+import { ArrowLeft, CheckCircle, Clock, Mail } from "lucide-react"
 
 export default function TimelinePage() {
   return (
@@ -15,7 +15,35 @@ export default function TimelinePage() {
         <h1 className="text-3xl font-bold">毕业学分审查系统版本时间线</h1>
       </div>
 
+      {/* Contact Email */}
+      <Card className="mb-8">
+        <CardContent className="pt-6">
+          <div className="flex items-center gap-2 text-primary mb-2">
+            <Mail className="h-5 w-5" />
+            <h3 className="text-lg font-semibold">开发联系邮箱</h3>
+          </div>
+          <p className="text-muted-foreground">
+            有想要的新功能或建议？欢迎发送邮件至：
+            <a href="mailto:credits-dev@thuhub.com" className="text-primary hover:underline ml-1">
+              credits-dev@thuhub.com
+            </a>
+          </p>
+        </CardContent>
+      </Card>
+
       <div className="space-y-12">
+        {/* Future versions placeholder */}
+        <div className="relative pl-8 border-l-2 border-gray-200 dark:border-gray-800">
+          <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
+            <span className="text-gray-700 dark:text-gray-300 text-xs font-bold">...</span>
+          </div>
+
+          <div className="mb-2">
+            <h2 className="text-2xl font-bold text-gray-400">未来版本</h2>
+            <p className="text-muted-foreground">敬请期待更多功能和改进...</p>
+          </div>
+        </div>
+
         {/* Version 2 - In Development */}
         <div className="relative pl-8 border-l-2 border-gray-200 dark:border-gray-800">
           <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center">
@@ -213,18 +241,6 @@ export default function TimelinePage() {
               <CheckCircle className="h-3.5 w-3.5" />
               <span>数据可视化</span>
             </div>
-          </div>
-        </div>
-
-        {/* Future versions placeholder */}
-        <div className="relative pl-8 border-l-2 border-gray-200 dark:border-gray-800">
-          <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
-            <span className="text-gray-700 dark:text-gray-300 text-xs font-bold">...</span>
-          </div>
-
-          <div className="mb-2">
-            <h2 className="text-2xl font-bold text-gray-400">未来版本</h2>
-            <p className="text-muted-foreground">敬请期待更多功能和改进...</p>
           </div>
         </div>
       </div>

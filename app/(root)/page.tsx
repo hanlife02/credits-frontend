@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { GraduationCap, BookOpen, BarChart, CheckCircle } from "lucide-react"
 import { useAuth } from "@/contexts/auth-context"
-import { Footer } from "@/components/footer"
 
 export default function HomePage() {
   const { isAuthenticated } = useAuth()
@@ -106,7 +105,6 @@ export default function HomePage() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   )
 }

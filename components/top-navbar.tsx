@@ -55,10 +55,10 @@ export function TopNavbar() {
     <header className="sticky top-0 z-40 w-full border-b border-gray-200 bg-white">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-6">
-          {/* Logo */}
+          {/* Logo - Updated to use the anime character image */}
           <Link href={isAuthenticated ? "/dashboard" : "/"} className="flex items-center gap-2">
             <img src="/favicon.jpg" alt="Logo" className="h-8 w-8 rounded-full" />
-            <span className="text-lg font-bold text-black">毕业学分审查喵～</span>
+            <span className="text-lg font-bold text-black">毕业学分审查系统</span>
           </Link>
 
           {/* Desktop navigation */}

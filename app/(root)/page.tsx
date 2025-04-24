@@ -21,8 +21,22 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
-        <div className="flex flex-col items-center justify-center p-4 md:p-8 lg:p-12 min-h-[70vh] bg-black dark:bg-white text-white dark:text-black">
-          <div className="max-w-5xl w-full mx-auto text-center">
+        {/* Hero section with background image and frosted glass effect */}
+        <div
+          className="relative flex flex-col items-center justify-center p-4 md:p-8 lg:p-12 min-h-[70vh] text-white"
+          style={{
+            backgroundImage: "url('/pku-lake.jpeg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          {/* Frosted glass overlay */}
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-md"></div>
+
+          <div className="relative z-10 max-w-5xl w-full mx-auto text-center">
+            <div className="flex justify-center mb-6">
+              <img src="/pku-logo.png" alt="PKU Logo" className="h-24 w-24" />
+            </div>
             <h1 className="text-3xl md:text-5xl font-bold mb-6">毕业学分审查系统</h1>
             <p className="text-lg md:text-xl mb-12 max-w-2xl mx-auto">
               轻松跟踪您的课程学分和毕业要求，智能分析您的学分进度，辅助您的选课决策。
@@ -31,7 +45,7 @@ export default function HomePage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-white text-black hover:bg-gray-200 dark:bg-black dark:text-white dark:hover:bg-gray-800"
+                className="bg-white text-black hover:bg-gray-200 dark:bg-white dark:text-black dark:hover:bg-gray-200"
               >
                 <Link href="/register">立即注册</Link>
               </Button>
@@ -39,7 +53,7 @@ export default function HomePage() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white text-black bg-white hover:bg-gray-200 dark:border-black dark:text-black dark:bg-white dark:hover:bg-gray-200"
+                className="border-white text-white hover:bg-white/20 dark:border-white dark:text-white dark:hover:bg-white/20"
               >
                 <Link href="/login">登录账号</Link>
               </Button>

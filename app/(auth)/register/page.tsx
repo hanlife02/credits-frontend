@@ -103,6 +103,7 @@ export default function RegisterPage() {
                   {isRequestingCode ? <Spinner size="sm" /> : codeSent ? "已发送" : "获取验证码"}
                 </Button>
               </div>
+              <p className="text-xs text-muted-foreground mt-1">验证码有效期为15分钟，过期需重新获取</p>
             </div>
             <div className="space-y-2">
               <Label htmlFor="code">验证码</Label>

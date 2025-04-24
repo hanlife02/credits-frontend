@@ -104,6 +104,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }
 
+  // Update the requestRegisterCode function to handle the new error message
   const requestRegisterCode = async (email: string) => {
     try {
       await authApi.requestRegisterCode(email)
@@ -114,13 +115,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     } catch (error) {
       toast({
         title: "发送验证码失败",
-        description: error instanceof Error ? error.message : "未知错误",
+        description: error instanceof Error ? error.message : "发送验证邮件失败，请稍后重试或联系管理员",
         variant: "destructive",
       })
       throw error
     }
   }
 
+  // Update the requestPasswordReset function to handle the new error message
   const requestPasswordReset = async (email: string) => {
     try {
       await authApi.requestPasswordReset(email)
@@ -131,7 +133,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     } catch (error) {
       toast({
         title: "发送验证码失败",
-        description: error instanceof Error ? error.message : "未知错误",
+        description: error instanceof Error ? error.message : "发送密码重置邮件失败，请稍后重试或联系管理员",
         variant: "destructive",
       })
       throw error

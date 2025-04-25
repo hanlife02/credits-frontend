@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { useAuth } from "@/contexts/auth-context"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { ChevronDown, LayoutDashboard, BookOpen, FolderOpen, BarChart, User, LogOut, Clock, Users } from "lucide-react"
+import { CertificateIcon } from "@/components/icons/certificate-icon"
 
 export function TopNavbar() {
   const { user, isAuthenticated, logout } = useAuth()
@@ -78,7 +79,7 @@ export function TopNavbar() {
         <div className="flex items-center gap-6">
           {/* Logo */}
           <Link href={isAuthenticated ? "/dashboard" : "/"} className="flex items-center gap-2">
-            <img src="/pku-logo.png" alt="Peking University Logo" className="h-8 w-8" />
+            <CertificateIcon className="h-8 w-8 text-primary" />
             <span className="text-lg font-bold text-black">毕业学分审查系统</span>
           </Link>
 

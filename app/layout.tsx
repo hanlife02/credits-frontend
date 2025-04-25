@@ -6,12 +6,12 @@ import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
-// Update the metadata with the new title
+// Update the metadata with the new icon
 export const metadata = {
   title: "毕业学分审查系统",
   description: "Track your course credits and graduation requirements",
   icons: {
-    icon: "/pku-logo.png",
+    icon: "/certificate-icon.png",
   },
     generator: 'v0.dev'
 }

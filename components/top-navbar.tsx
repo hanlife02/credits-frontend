@@ -78,7 +78,7 @@ export function TopNavbar() {
         <div className="flex items-center gap-6">
           {/* Logo */}
           <Link href={isAuthenticated ? "/dashboard" : "/"} className="flex items-center gap-2">
-            <img src="/favicon.jpg" alt="Logo" className="h-8 w-8 rounded-full" />
+            <img src="/pku-logo.png" alt="Peking University Logo" className="h-8 w-8" />
             <span className="text-lg font-bold text-black">毕业学分审查系统</span>
           </Link>
 

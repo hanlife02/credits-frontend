@@ -8,10 +8,10 @@ const inter = Inter({ subsets: ["latin"] })
 
 // Update the metadata with the new title
 export const metadata = {
-  title: "毕业学分审查喵～",
+  title: "毕业学分审查系统",
   description: "Track your course credits and graduation requirements",
   icons: {
-    icon: "/favicon.jpg",
+    icon: "/pku-logo.png",
   },
     generator: 'v0.dev'
 }

@@ -11,7 +11,7 @@ export const metadata = {
   title: "毕业学分审查喵～",
   description: "Track your course credits and graduation requirements",
   icons: {
-    icon: "/pku-logo.png",
+    icon: "/favicon.jpg",
   },
     generator: 'v0.dev'
 }

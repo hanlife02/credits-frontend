@@ -68,7 +68,7 @@ export default function DevelopersPage() {
                 />
               </div>
               <h3 className="text-xl font-bold mb-2">Lynn</h3>
-              <p className="text-muted-foreground mb-4">半生累尽徒然碑文完美有谁看</p>
+              <p className="text-muted-foreground mb-4">半生累 尽徒然 碑文完美有谁看</p>
               <div className="flex gap-3">
                 <Link
                   href="https://github.com/LynnGuo666"

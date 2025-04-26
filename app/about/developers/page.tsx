@@ -95,7 +95,11 @@ export default function DevelopersPage() {
       </Card>
 
       <div className="text-center">
-        <p className="text-sm text-muted-foreground">对系统有任何建议或反馈？请联系我们的开发团队。</p>
+        <p className="text-sm text-muted-foreground">对系统有任何建议或反馈？请联系我们的开发团队:
+            <a href="mailto:credits-dev@thuhub.com" className="text-primary hover:underline ml-1">
+              credits-dev@thuhub.com
+            </a></p>
+        
       </div>
     </div>
   )
